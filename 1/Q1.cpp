@@ -14,9 +14,7 @@ int main() {
         return 0;
     }
     
-    
     long long int max;
-    inFile >> x;
     //find largest odd number
     while (inFile >> x) {
     	bool isOdd = true; 
