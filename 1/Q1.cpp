@@ -17,8 +17,9 @@ int main() {
     long long int max;
     //find largest odd number
     while (inFile >> x) {
-    	bool isOdd = true; 
     	long long int tmp = x;
+    	bool isOdd = true;
+    	
         while(tmp > 0) {
         	if((tmp%10) % 2 == 0) {
         		isOdd = false;
@@ -26,18 +27,17 @@ int main() {
 			}
 			tmp /= 10;
 		}
+		
 		if(isOdd) {
-			if(max < x) {
+			if(max != NULL) {
+				if(max < x) {
+					max = x;
+				}
+			} else {
 				max = x;
 			}
 		}
     }
-    
-    //print list
-//    for(it = lst.begin(); it != lst.end(); ++it) {
-//    	cout << *it << " ";
-//	}
-//	cout << "\n";
     
     inFile.close();
     if(max != NULL) {
