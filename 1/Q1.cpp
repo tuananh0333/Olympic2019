@@ -14,7 +14,10 @@ int main() {
         return 0;
     }
     
-    //find odd numbers
+    
+    long long int max;
+    inFile >> x;
+    //find largest odd number
     while (inFile >> x) {
     	bool isOdd = true; 
     	long long int tmp = x;
@@ -26,26 +29,24 @@ int main() {
 			tmp /= 10;
 		}
 		if(isOdd) {
-			lst.push_back(x);
+			if(max < x) {
+				max = x;
+			}
 		}
     }
-    list <long long int> :: iterator it; 
     
     //print list
 //    for(it = lst.begin(); it != lst.end(); ++it) {
 //    	cout << *it << " ";
 //	}
 //	cout << "\n";
-        
-    //find max
-    long long int max = *(lst.begin());
-    for(it = lst.begin(); it != lst.end(); ++it) {
-    	if(*it > max) {
-    		max = *it;
-		}
-	}
     
     inFile.close();
-    cout << "Value = " << max << endl; 
+    if(max != NULL) {
+    	cout << "Value = " << max << endl; 
+	} else {
+		cout << "No number found!" << endl; 
+	}
+    
     return 1;
 }
