@@ -33,6 +33,10 @@ int main() {
 			} else {
 				ngs.pop();
 			}
+			
+			if(i == s.length()-1 && ngs.size() != 0) {
+				isNg = false;
+			}
 		}
 		if(isNg) {
 			outp = k+1;
